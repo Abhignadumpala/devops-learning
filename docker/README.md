@@ -189,6 +189,12 @@ http://localhost:3000
 
 If you see that text, everything worked end to end — code, image, container, and network mapping.
 
+**What I actually saw in the browser:**
+
+![Browser showing http://localhost:3000 with the response "Hello from Docker!"](screenshots/browser-hello-from-docker.png)
+
+The address bar shows `http://localhost:3000` and the page just prints `Hello from Docker!` — plain text, no HTML, exactly what `res.end('Hello from Docker!\n')` in `app.js` sends back.
+
 ---
 
 ## 8. Big Ideas to Remember
