@@ -13,7 +13,7 @@ A small Node.js web server, packaged and run inside a Docker container.
 - `app.js` — the server code
 - `package.json` — Node.js project configuration
 - `Dockerfile` — instructions Docker uses to build the image
-- `interview-questions/` — separate folder with Q&A for interview prep (see [section 10](#10-interview-questions))
+- `zz-interview-questions.md` — Q&A for interview prep (see [section 10](#10-interview-questions))
 
 ---
 
@@ -229,8 +229,8 @@ Same steps I did locally — just automated and pointed at the cloud instead of 
 
 ## 10. Interview Questions
 
-All interview prep for this project lives in a separate subfolder:
+All interview prep for this project lives in a separate file, listed last on purpose:
 
-👉 [`interview-questions/docker-basics.md`](interview-questions/docker-basics.md)
+👉 [`zz-interview-questions.md`](zz-interview-questions.md)
 
 It has 20 Q&A entries covering images vs. containers, `COPY`, port mapping, `Dockerfile` instructions, and how this workflow maps to real production deployments — all based on the exact project explained above.

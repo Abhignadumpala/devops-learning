@@ -1,7 +1,7 @@
 # Docker Interview Questions & Answers
 
 Based on the hands-on project: a Node.js HTTP server packaged and run in Docker.
-See `../NOTES.md` for the full walkthrough these answers are based on.
+See [`README.md`](README.md) for the full walkthrough these answers are based on.
 
 ---
 
