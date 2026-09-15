@@ -1,0 +1,12 @@
+{
+  "name": "docker-hello-app",
+  "version": "1.0.0",
+  "description": "Simple Docker app - Hello from Docker",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": ["docker", "nodejs", "http"],
+  "author": "Abhigna",
+  "license": "MIT"
+}
