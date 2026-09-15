@@ -1,4 +1,4 @@
-# Docker Learning Notes: Node.js HTTP Server in a Container
+# Docker: Node.js HTTP Server in a Container
 
 ## 1. What I Built
 
@@ -9,11 +9,11 @@ A small Node.js web server, packaged and run inside a Docker container.
 - The whole thing is packaged with Docker, so it runs the same way on any computer.
 
 **Files in this project:**
+- `README.md` — this file, explaining everything I did
 - `app.js` — the server code
 - `package.json` — Node.js project configuration
 - `Dockerfile` — instructions Docker uses to build the image
-- `NOTES.md` — this file
-- `interview-questions/` — separate folder with Q&A for interview prep
+- `interview-questions/` — separate folder with Q&A for interview prep (see [section 10](#10-interview-questions))
 
 ---
 
@@ -224,3 +224,13 @@ Same steps I did locally — just automated and pointed at the cloud instead of 
 - Terraform — provisioning cloud infrastructure as code
 - CI/CD (Jenkins/GitHub Actions) — automating build and deploy
 - Docker Compose — running multiple containers together (e.g. app + database)
+
+---
+
+## 10. Interview Questions
+
+All interview prep for this project lives in a separate subfolder:
+
+👉 [`interview-questions/docker-basics.md`](interview-questions/docker-basics.md)
+
+It has 20 Q&A entries covering images vs. containers, `COPY`, port mapping, `Dockerfile` instructions, and how this workflow maps to real production deployments — all based on the exact project explained above.
