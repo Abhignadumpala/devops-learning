@@ -14,9 +14,10 @@ sort   -> sort lines in order
 uniq   -> unique (removes duplicate lines next to each other, so sort first)
 wc     -> word count
 ps     -> process status
-       -ef = e: every process, f: full format
+ps -e  -> every process
+ps -f  -> full format
 df     -> disk free
-       -h = human readable (G, M instead of bytes)
+df -h  -> human readable sizes (G, M instead of bytes)
 ```
 
 ## pipe | (output of one command -> input of next)
@@ -55,4 +56,9 @@ grep -i error app.log >> errors.txt   -> add matching lines to the file (appendi
 ls -l > filelist.txt                  -> save the ls output into a file
 ```
 
-`>` = overriding, `>>` = appending (same as with `echo` in [Files & folders](../02-files-crud/)).
+```
+>   -> overriding
+>>  -> appending
+```
+
+Same as with `echo` in [Files & folders](../02-files-crud/).

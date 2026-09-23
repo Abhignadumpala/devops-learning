@@ -128,7 +128,12 @@ relative path -> no / at start  -> starts from where I am now (pwd)
                  cd linux        (only works if linux is inside my current folder)
 ```
 
-Simple way to remember: absolute = full home address, relative = "two doors down from here".
+Simple way to remember:
+
+```
+absolute -> full home address
+relative -> "two doors down from here"
+```
 
 In scripts and cron jobs, use absolute paths, because the script might run from a different folder.
 
@@ -186,11 +191,20 @@ popd                  -> go back to the remembered folder
 ## Simple way to remember
 
 ```
-pwd   -> where am I?
-ls    -> what's here?   (-la = everything incl. hidden, -lh = readable sizes, -ltr = newest last)
-cd    -> go there
-cd .. -> up one       cd ~ (or just cd) -> home       cd - -> back to previous
-/     -> starts from root (absolute)      no /  -> starts from here (relative)
-.     -> here         ..    -> parent     ~     -> home
-Tab   -> auto-complete names
+pwd       -> where am I?
+ls        -> what's here?
+ls -la    -> everything, including hidden files
+ls -lh    -> readable sizes (K, M, G)
+ls -ltr   -> newest files at the bottom
+cd        -> go there
+cd ..     -> go up one level
+cd ~      -> go home
+cd        -> go home (same as cd ~)
+cd -      -> go back to the previous folder
+/path     -> starts from root (absolute path)
+path      -> starts from where I am (relative path)
+.         -> this folder
+..        -> parent folder
+~         -> home folder
+Tab       -> auto-complete names
 ```

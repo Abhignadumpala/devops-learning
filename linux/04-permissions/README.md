@@ -30,8 +30,13 @@ ACL      -> access control list
 umask    -> user file-creation mask
 
 Letters inside commands:
-u = user (owner), g = group, o = others, a = all
-r = read, w = write, x = execute
+u  -> user (owner)
+g  -> group
+o  -> others
+a  -> all
+r  -> read
+w  -> write
+x  -> execute
 ```
 
 ## Quick version (my first notes)
@@ -61,7 +66,10 @@ type       owner     group     others    owner    group
 ```
 
 ```
-first character -> type:  -  = file,  d = folder (directory),  l = link (shortcut)
+first character -> type of item
+   -            -> file
+   d            -> folder (directory)
+   l            -> link (shortcut)
 next 3          -> what the OWNER (u) can do
 next 3          -> what the GROUP (g) can do
 last 3          -> what OTHERS (o) can do (everyone else on the server)
@@ -118,9 +126,21 @@ chmod 777 file        -> rwxrwxrwx  everyone can do everything (avoid! security 
 Easier when you only want to change one thing without touching the rest.
 
 ```
-who:     u = user (owner),  g = group,  o = others,  a = all
-action:  + = add,  - = remove,  = = set exactly
-what:    r, w, x
+Who:
+u  -> user (owner)
+g  -> group
+o  -> others
+a  -> all
+
+Action:
++  -> add
+-  -> remove
+=  -> set exactly
+
+What:
+r  -> read
+w  -> write
+x  -> execute
 ```
 
 ```
@@ -167,7 +187,9 @@ sudo chown -R ravi:devops project/ -> change folder and everything inside
 whoami                          -> which user am I
 id                              -> my user id, group id and all my groups
 id ravi                         -> same info for ravi
-sudo useradd -m -s /bin/bash ravi  -> create user ravi (-m = make home folder, -s = shell)
+sudo useradd -m -s /bin/bash ravi  -> create user ravi
+                                      -m = make home folder
+                                      -s = login shell (bash)
 sudo adduser ravi               -> create user interactively (Ubuntu, asks password etc.)
 sudo passwd ravi                -> set/change ravi's password
 su - ravi                       -> switch to user ravi
@@ -277,12 +299,23 @@ With numbers, the special bit goes as a 4th digit in front: `chmod 2770 folder` 
 ```
 ls -l            -> see permissions
 chmod            -> change WHAT they can do (r w x)
-chown / chgrp    -> change WHO owns it
-useradd/passwd   -> create people
+chown            -> change WHO owns it (owner and group)
+chgrp            -> change only the group
+useradd          -> create a user
+passwd           -> set the user's password
 groupadd         -> create teams
 usermod -aG      -> add person to team (always -a!)
 gpasswd -d       -> remove person from team
 setfacl          -> give access to one extra person
-r=4 w=2 x=1      -> 7 = rwx, 6 = rw-, 5 = r-x, 4 = r--
-755 = scripts/folders, 644 = normal files, 600 = keys, 777 = never
+r                -> 4
+w                -> 2
+x                -> 1
+7                -> rwx
+6                -> rw-
+5                -> r-x
+4                -> r--
+755              -> scripts and folders
+644              -> normal files
+600              -> SSH keys and secrets
+777              -> never (everyone can do everything)
 ```
