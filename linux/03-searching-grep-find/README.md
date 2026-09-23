@@ -41,3 +41,5 @@ grep -in linux linux.md   -> ignore case and show with line number
 ```
 
 Using grep with a pipe `|` to filter the output of other commands -> see [Pipes & redirection](../05-pipes-and-redirection/).
+
+To see every flag grep has: `grep --help` (or `man grep` for the full manual) -> see [Useful commands](../07-useful-commands/).

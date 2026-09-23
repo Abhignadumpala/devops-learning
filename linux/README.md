@@ -10,4 +10,4 @@ Linux commands written in simple language, as per my understanding. Each topic h
 | 4 | [Permissions, users & groups](04-permissions/) | `chmod`, `chown`, users, groups, sudo, ACL, umask |
 | 5 | [Pipes & redirection](05-pipes-and-redirection/) | `\|`, `>`, `>>` |
 | 6 | [wget & curl](06-wget-and-curl/) | downloading files, talking to URLs/APIs |
-| 7 | [Useful commands](07-useful-commands/) | `history`, `clear`, `man` |
+| 7 | [Useful commands](07-useful-commands/) | `history`, `clear`, `man`, `--help` |
