@@ -1,0 +1,162 @@
+## I wrote linux commands in simple language as per my understading ##
+
+Navigation
+pwd -> shows present working directory (where you are)
+cd <folder-name> -> go inside the folder
+cd .. -> go back one level
+cd ~ -> go to home directory
+cd - -> go back to the previous directory
+
+## CRUD -> Create, Read, Update, Delete (files and folders) simple logic to remember##
+
+Creating
+touch a.txt b.txt c.txt -> create multiple files at once
+mkdir <folder-name> -> create a folder
+mkdir dir1 dir2 -> create multiple folders
+mkdir -p aws/ec2/logs -> create nested folders in one go
+
+Reading
+cat <file-name> -> display file content
+cat -n <file-name> -> display content with line numbers
+head <file-name> -> first 10 lines
+head -n 5 <file-name> -> first 5 lines
+tail <file-name> -> last 10 lines
+tail -f <file-name> -> watch the file live (used for logs)
+less <file-name> -> read page by page, press q to quit
+wc -l <file-name> -> count number of lines
+
+Updating
+echo "text" > <file-name> -> overriding
+echo "text" >> <file-name> -> appending
+vim <file-name> -> open file in editor (i = insert, Esc then :wq = save & quit)
+
+Copy / Move / Rename
+cp <source> <destination> -> copy file
+cp -r <folder1> <folder2> -> copy folder with everything inside
+mv <old-name> <new-name> -> rename file/folder
+mv <file-name> <folder-name>/ -> move file into folder
+
+Deleting
+rm <file-name> -> delete file
+rm -r <folder-name> -> delete folder with its contents
+rm -rf <folder-name> -> force delete, no confirmation (be careful!)
+rmdir <folder-name> -> delete only if folder is empty
+
+Searching
+find . -name "*.txt" -> find all .txt files in current folder
+grep "DevOps" <file-name> -> search a word inside a file
+grep -i "devops" <file-name> -> search ignoring upper/lower case
+grep -r "DevOps" <folder-name> -> search inside all files in a folder
+
+Permissions
+chmod 755 <file-name> -> owner rwx, group r-x, others r-x
+chmod +x <file-name> -> make file executable
+chown <user>:<group> <file-name> -> change owner and group
+
+Useful
+history -> list previously used commands
+clear -> clear the screen
+man <command> -> manual/help for any command
+
+## grep with pipe | -> filter the output of any command ##
+
+cat linux.md | grep -i linux -> show lines that contain linux, Linux, LINUX (any case)
+
+
+Also, `|` is called a **pipe**. It takes the output of the first command and gives it as input to the next one.
+
+Here are more commands in the same style:
+
+## grep (search inside files) ##
+grep linux linux.md -> lines with "linux" only (case sensitive)
+grep -i linux linux.md -> ignore case, finds linux / Linux / LINUX
+grep -v linux linux.md -> show lines that do NOT contain linux (opposite)
+grep -n linux linux.md -> show matching lines with line numbers
+grep -c linux linux.md -> count how many lines matched
+grep -w linux linux.md -> match whole word only (won't match "linuxos")
+grep -r linux . -> search in all files inside current folder
+grep -l linux * -> show only the file NAMES that contain linux
+grep -in linux linux.md -> flags can be combined (ignore case + line numbers)
+
+## pipe | (output of one command -> input of next) ##
+ls -l | grep txt -> list only files that have "txt" in the name
+ls -l | grep ^d -> list only folders (lines starting with d)
+ls | wc -l -> count how many files/folders are here
+cat linux.md | wc -l -> count lines in the file
+cat linux.md | head -5 -> first 5 lines of the file
+cat linux.md | tail -3 -> last 3 lines of the file
+cat linux.md | sort -> show lines in alphabetical order
+cat linux.md | sort | uniq -> sort and remove duplicate lines
+cat linux.md | grep -i linux | wc -l -> count lines that contain linux (any case)
+history | grep mkdir -> find mkdir commands I used before
+ps -ef | grep nginx -> check if nginx process is running
+df -h | grep /dev -> check disk space of mounted disks
+
+## redirect output into a file ##
+grep -i error app.log > errors.txt -> save matching lines into a new file (overriding)
+grep -i error app.log >> errors.txt -> add matching lines to the file (appending)
+ls -l > filelist.txt -> save the ls output into a file
+```
+
+##A simple way to remember the grep flags:
+
+
+-i -> ignore case
+-v -> reverse (NOT matching)
+-n -> numbers (line numbers)
+-c -> count
+-w -> whole word
+-r -> recursive (all files in folder)
+-l -> list file names only
+
+## wget vs curl: Downloading & Talking to URLs ##
+## wget (download files from the internet) ##
+wget <url> -> download the file into current folder
+wget -O myfile.zip <url> -> download and save with a different name (capital O)
+wget -P /tmp <url> -> download into a specific folder
+wget -c <url> -> continue a download that stopped in the middle
+wget -q <url> -> quiet mode, no progress output
+wget -b <url> -> download in background
+wget -i urls.txt -> download all links listed inside urls.txt
+
+Example:
+wget https://nginx.org/download/nginx-1.26.2.tar.gz -> downloads nginx source file
+
+## curl (talk to a URL / API, shows output on screen by default) ##
+curl <url> -> show the webpage/API response on the screen
+curl -o myfile.html <url> -> save output into a file with the name I give (small o)
+curl -O <url> -> save output with the same name as in the URL (capital O)
+curl -I <url> -> show only headers (status code, server, content-type)
+curl -L <url> -> follow redirects (if site moved to another URL)
+curl -s <url> -> silent mode, no progress bar
+curl -v <url> -> verbose, shows full request/response details (good for troubleshooting)
+curl -u user:password <url> -> send username and password
+curl -X POST <url> -> send a POST request (default is GET)
+curl -H "Content-Type: application/json" <url> -> send a header
+curl -d '{"name":"abhi"}' <url> -> send data in the request body
+
+Example:
+curl -X POST -H "Content-Type: application/json" -d '{"task":"learn linux"}' http://localhost:3000/tasks
+-> send JSON data to my app API
+
+## curl with pipe | ##
+curl -s <url> | grep -i title -> fetch page and search for "title"
+curl -s https://api.github.com/users/Abhignadumpala | grep -i repos -> check repo count from GitHub API
+curl -I https://google.com | grep -i http -> check only the status code line
+
+## Real DevOps use cases ##
+curl localhost:80 -> check if nginx/app is running on the server
+curl -I localhost:8080 -> check if app returns 200 OK
+curl http://169.254.169.254/latest/meta-data/ -> EC2 instance metadata (IMDSv1; newer instances need a token with IMDSv2)
+curl ifconfig.me -> find public IP of the server
+wget <url-of-script> && bash script.sh -> download and run an install script
+
+##Simple way to remember the difference##
+
+wget -> "web get", main job is downloading files, saves to disk by default
+curl -> "client URL", talks to URLs/APIs, shows output on screen by default
+         supports GET, POST, PUT, DELETE, headers, data -> used for API testing
+
+wget -O -> save with my name (capital O)
+curl -o -> save with my name (small o)
+curl -O -> save with URL's name (capital O)
