@@ -1,5 +1,7 @@
 # Useful Commands
 
+> **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `history --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
+
 ```
 history          -> list previously used commands
 clear            -> clear the screen

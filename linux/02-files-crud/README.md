@@ -1,5 +1,7 @@
 # Files & Folders (CRUD)
 
+> **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `mkdir --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
+
 CRUD -> **C**reate, **R**ead, **U**pdate, **D**elete (files and folders). Simple logic to remember.
 
 ## Creating

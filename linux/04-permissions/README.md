@@ -1,5 +1,7 @@
 # Permissions, Users & Groups
 
+> **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `chmod --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
+
 ## Quick version (my first notes)
 
 ```

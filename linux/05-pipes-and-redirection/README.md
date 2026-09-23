@@ -1,5 +1,7 @@
 # Pipes & Redirection
 
+> **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `sort --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
+
 ## pipe | (output of one command -> input of next)
 
 `|` is called a **pipe**. It takes the output of the first command and gives it as input to the next one.
