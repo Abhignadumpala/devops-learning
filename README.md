@@ -12,10 +12,10 @@ Building toward job applications — the study order below follows the skills th
 
 - [x] **Docker** — containerized a Node.js HTTP server, built + ran the image, tested in browser → [`docker/`](docker/)
 - [ ] **AWS Fundamentals** — EC2, S3, VPC, IAM, RDS basics + AWS Certified Cloud Practitioner
-- [ ] **Terraform** — rebuild AWS fundamentals resources as IaC (providers, resources, state, plan/apply/destroy, variables)
+- [x ] **Terraform** — rebuild AWS fundamentals resources as IaC (providers, resources, state, plan/apply/destroy, variables)
 - [ ] **CI/CD** — GitHub Actions pipeline for the Docker project (build → test → deploy)
 - [ ] **Kubernetes** — local cluster (kind/minikube), deploy the Docker app as Deployment + Service, then AWS EKS
-- [ ] **Linux fundamentals** — file system, permissions, process management, shell scripting
+- [ x] **Linux fundamentals** — file system, permissions, process management, shell scripting
 - [ ] **Git / version control** — branching, merging, PR workflow (beyond basic add/commit/push)
 - [ ] **Scripting (Python/Bash)** — folded into the topics above as automation, not a standalone module
 - [ ] **Monitoring/Observability** — CloudWatch alarms on AWS resources, Prometheus + Grafana on the Kubernetes deployment
