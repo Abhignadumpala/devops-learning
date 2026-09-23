@@ -8,6 +8,7 @@
 
 ```
 cat linux.md | grep -i linux   -> show lines that contain linux, Linux, LINUX (any case)
+cat linux.md | grep -in linux  -> same as above, but also shows the line number of each matching line
 ```
 
 ### More pipe examples
