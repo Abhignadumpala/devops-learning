@@ -30,6 +30,10 @@ Order matches the skill-frequency analysis in [`job-search/prep-plan.md`](job-se
 
 Short entries — what I did, what I learned, what's next. Newest first.
 
+### 2026-09-23 — Day 2: Linux commands
+- Wrote the Linux commands I use in plain language, split by topic into [`linux/`](linux/): navigation, file CRUD, searching (grep/find), permissions, pipes & redirection, wget vs curl, and a few other useful commands.
+- **Next:** add more commands (process management, shell scripting) before ticking off Linux fundamentals.
+
 ### 2026-09-15 — Day 1: Docker
 - Built a Node.js HTTP server, wrote a Dockerfile, built the image with `docker build`, ran it with `docker run -p 3000:3000`, tested `http://localhost:3000` in the browser.
 - Documented everything in [`docker/README.md`](docker/README.md) and wrote 20 Q&A in [`docker/docker-interview-questions.md`](docker/docker-interview-questions.md).
