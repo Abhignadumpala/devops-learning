@@ -2,6 +2,16 @@
 
 > **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `grep --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
 
+## What the command names mean
+
+Knowing the full name makes the command easy to remember.
+
+```
+find   -> find files and folders by name, type, size...
+grep   -> global regular expression print
+          (comes from the old editor command g/re/p = search globally for a pattern and print matching lines)
+```
+
 ## find (search for files by name)
 
 ```

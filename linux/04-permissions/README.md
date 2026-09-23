@@ -2,6 +2,38 @@
 
 > **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `chmod --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
 
+## What the command names mean
+
+Knowing the full name makes the command easy to remember.
+
+```
+chmod    -> change mode (mode = permissions)
+chown    -> change owner
+chgrp    -> change group
+whoami   -> who am I (my username)
+id       -> identity (user id + group ids)
+useradd  -> add user
+userdel  -> delete user
+usermod  -> modify user
+passwd   -> password
+su       -> switch user (substitute user)
+sudo     -> superuser do (run as admin/root)
+visudo   -> vi + sudoers (safe editor for the sudoers file)
+groupadd -> add group
+groupdel -> delete group
+gpasswd  -> group password (also used to add/remove group members)
+newgrp   -> new group (switch to a group in current shell)
+getent   -> get entries (reads users/groups from system databases)
+setfacl  -> set file access control list
+getfacl  -> get file access control list
+ACL      -> access control list
+umask    -> user file-creation mask
+
+Letters inside commands:
+u = user (owner), g = group, o = others, a = all
+r = read, w = write, x = execute
+```
+
 ## Quick version (my first notes)
 
 ```

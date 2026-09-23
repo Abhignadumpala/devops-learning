@@ -2,6 +2,17 @@
 
 > **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `history --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
 
+## What the command names mean
+
+Knowing the full name makes the command easy to remember.
+
+```
+history -> history of commands I typed
+clear   -> clear the screen
+man     -> manual
+--help  -> short help for any command
+```
+
 ```
 history          -> list previously used commands
 clear            -> clear the screen

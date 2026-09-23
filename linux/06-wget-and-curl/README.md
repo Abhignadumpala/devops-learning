@@ -2,6 +2,22 @@
 
 > **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `curl --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
 
+## What the command names mean
+
+Knowing the full name makes the command easy to remember.
+
+```
+wget   -> web get (World Wide Web get)
+curl   -> client URL (a client that talks to URLs)
+URL    -> uniform resource locator (a web address)
+API    -> application programming interface
+GET    -> ask for data (default)
+POST   -> send new data
+PUT    -> update data
+DELETE -> remove data
+IMDS   -> instance metadata service (AWS EC2)
+```
+
 ## wget (download files from the internet)
 
 ```

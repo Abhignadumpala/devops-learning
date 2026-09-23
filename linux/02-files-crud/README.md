@@ -2,6 +2,32 @@
 
 > **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `mkdir --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
 
+## What the command names mean
+
+Knowing the full name makes the command easy to remember.
+
+```
+touch  -> "touches" a file: creates it if missing, else updates its time
+mkdir  -> make directory
+cat    -> concatenate (joins files and prints them)
+head   -> top (head) of the file
+tail   -> bottom (tail) of the file
+less   -> page-by-page viewer (improved version of the old "more" command: "less is more")
+wc     -> word count (also counts lines with -l)
+echo   -> repeats (echoes) back the text I give
+vim    -> vi improved (text editor)
+cp     -> copy
+mv     -> move (also used to rename)
+rm     -> remove
+rmdir  -> remove directory
+
+Common flags:
+-p     -> parents (mkdir -p creates parent folders too)
+-r     -> recursive (folder and everything inside)
+-f     -> force (no questions asked)
+-n     -> number (head -n 5 = number of lines, cat -n = line numbers)
+```
+
 CRUD -> **C**reate, **R**ead, **U**pdate, **D**elete (files and folders). Simple logic to remember.
 
 ## Creating

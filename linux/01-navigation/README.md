@@ -2,6 +2,22 @@
 
 > **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `cd --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
 
+## What the command names mean
+
+Knowing the full name makes the command easy to remember.
+
+```
+pwd    -> print working directory
+ls     -> list
+cd     -> change directory
+tree   -> shows folders as a tree
+which  -> which file runs when I type this command
+file   -> tells what type of file it is
+du     -> disk usage
+pushd  -> push directory (save current folder, go to new one)
+popd   -> pop directory (go back to the saved folder)
+```
+
 ## Quick version (my first notes)
 
 ```

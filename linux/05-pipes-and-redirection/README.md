@@ -2,6 +2,23 @@
 
 > **Tip:** No need to memorize every flag. Run `<command> --help` (two dashes, e.g. `sort --help`) to see everything a command can do, or `man <command>` for the full manual (q to quit).
 
+## What the command names mean
+
+Knowing the full name makes the command easy to remember.
+
+```
+|      -> pipe
+>      -> redirect (overwrite)
+>>     -> redirect (append)
+sort   -> sort lines in order
+uniq   -> unique (removes duplicate lines next to each other, so sort first)
+wc     -> word count
+ps     -> process status
+       -ef = e: every process, f: full format
+df     -> disk free
+       -h = human readable (G, M instead of bytes)
+```
+
 ## pipe | (output of one command -> input of next)
 
 `|` is called a **pipe**. It takes the output of the first command and gives it as input to the next one.
