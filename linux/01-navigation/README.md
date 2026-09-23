@@ -191,20 +191,20 @@ popd                  -> go back to the remembered folder
 ## Simple way to remember
 
 ```
-pwd       -> where am I?
-ls        -> what's here?
-ls -la    -> everything, including hidden files
-ls -lh    -> readable sizes (K, M, G)
-ls -ltr   -> newest files at the bottom
-cd        -> go there
-cd ..     -> go up one level
-cd ~      -> go home
-cd        -> go home (same as cd ~)
-cd -      -> go back to the previous folder
-/path     -> starts from root (absolute path)
-path      -> starts from where I am (relative path)
-.         -> this folder
-..        -> parent folder
-~         -> home folder
-Tab       -> auto-complete names
+pwd          -> where am I?
+ls           -> what's here?
+ls -la       -> everything, including hidden files
+ls -lh       -> readable sizes (K, M, G)
+ls -ltr      -> newest files at the bottom
+cd <folder>  -> go there
+cd ..        -> go up one level
+cd ~         -> go home
+cd           -> go home (same as cd ~)
+cd -         -> go back to the previous folder
+/path        -> starts from root (absolute path)
+path         -> starts from where I am (relative path)
+.            -> this folder
+..           -> parent folder
+~            -> home folder
+Tab          -> auto-complete names
 ```
