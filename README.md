@@ -2,7 +2,7 @@
 
 I already know the basics of most topics below from self-study, but I never documented any of it publicly — so I had no proof, and explaining it out loud in an interview always felt shakier than it should. This repo fixes both: I re-build each topic as a small hands-on project, document it properly, and write it up like I'd explain it to an interviewer. That process is what builds the confidence, not just the knowing.
 
-Building toward job applications (see `job-search/` for target roles and the study order this checklist follows).
+Building toward job applications — the study order below follows the skills that showed up most in DevOps job postings I've been tracking.
 
 **How this repo works:** each topic gets its own folder with a `README.md` (what I built + line-by-line explanation) and a `<topic>-interview-questions.md` (Q&A based on that exact project). This file tracks progress across all topics and logs what happened each day. A checkbox below means "documented here with proof," not "never touched before."
 
@@ -22,7 +22,7 @@ Building toward job applications (see `job-search/` for target roles and the stu
 - [ ] **Security/IAM basics** — least-privilege IAM policies, security groups vs NACLs
 - [ ] **Capstone project** — one project tying together Terraform + AWS + CI/CD + Kubernetes + monitoring, documented with an interview presentation deck and war stories
 
-Order matches the skill-frequency analysis in [`job-search/prep-plan.md`](job-search/prep-plan.md) — AWS, Terraform, CI/CD, and Docker showed up in every job posting saved there.
+Order is based on skill frequency across the job postings I've saved — AWS, Terraform, CI/CD, and Docker showed up in every one.
 
 ---
 
@@ -37,5 +37,5 @@ Short entries — what I did, what I learned, what's next. Newest first.
 ### 2026-09-15 — Day 1: Docker
 - Built a Node.js HTTP server, wrote a Dockerfile, built the image with `docker build`, ran it with `docker run -p 3000:3000`, tested `http://localhost:3000` in the browser.
 - Documented everything in [`docker/README.md`](docker/README.md) and wrote 20 Q&A in [`docker/docker-interview-questions.md`](docker/docker-interview-questions.md).
-- Saved 9 relevant job postings and a study-order gap analysis in `job-search/`.
+- Saved 9 relevant job postings and worked out a study order from them.
 - **Next:** AWS fundamentals — set up a free-tier account, start with EC2/S3/VPC.
