@@ -121,18 +121,66 @@ cd                     -> home: /home/abhi
 ## 6. Absolute path vs relative path
 
 ```
-absolute path -> starts with /  -> full address from root, works from anywhere
-                 cd /home/abhi/devops-learning/linux
+absolute path -> path from the beginning (starts from root /)
+relative path -> path from the current folder (starts from where I am, pwd)
+```
 
-relative path -> no / at start  -> starts from where I am now (pwd)
-                 cd linux        (only works if linux is inside my current folder)
+- **Absolute** always starts with `/`. It works from anywhere, because it gives the full address.
+- **Relative** never starts with `/`. It only works if I'm in the right folder, because it starts from where I am.
+
+### Example
+
+Folder structure:
+
+```
+/
+└── home
+    └── abhi
+        └── devops-learning
+            ├── docker
+            └── linux
+                └── 01-navigation
+```
+
+I am in `/home/abhi/devops-learning` (check with `pwd`).
+
+Go to the `linux` folder:
+
+```
+cd /home/abhi/devops-learning/linux   -> absolute (from the beginning)
+cd linux                              -> relative (from current folder)
+```
+
+Go to the `01-navigation` folder:
+
+```
+cd /home/abhi/devops-learning/linux/01-navigation   -> absolute
+cd linux/01-navigation                              -> relative
+```
+
+Go from `linux` to its sibling `docker` (now I am in `/home/abhi/devops-learning/linux`):
+
+```
+cd /home/abhi/devops-learning/docker   -> absolute
+cd ../docker                           -> relative (.. = up one level, then into docker)
+```
+
+More examples:
+
+```
+/etc/nginx/nginx.conf      -> absolute
+/var/log/syslog            -> absolute
+~/devops-learning          -> absolute (~ is short for /home/abhi)
+docker/Dockerfile          -> relative
+./script.sh                -> relative (. = current folder)
+../README.md               -> relative (.. = one folder up)
 ```
 
 Simple way to remember:
 
 ```
-absolute -> full home address
-relative -> "two doors down from here"
+absolute -> full home address, works from anywhere
+relative -> "two doors down from here", depends on where I am
 ```
 
 In scripts and cron jobs, use absolute paths, because the script might run from a different folder.
