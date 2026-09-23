@@ -25,7 +25,7 @@ grep -c linux linux.md    -> count how many lines matched
 grep -w linux linux.md    -> match whole word only (won't match "linuxos")
 grep -r linux .           -> search in all files inside current folder
 grep -l linux *           -> show only the file NAMES that contain linux
-grep -in linux linux.md   -> flags can be combined (ignore case + line numbers)
+grep -in linux linux.md   -> ignore case and show with line number
 ```
 
 ## A simple way to remember the grep flags
