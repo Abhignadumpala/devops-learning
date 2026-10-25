@@ -10,10 +10,10 @@ Building toward job applications — the study order below follows the skills th
 
 - [x] **Docker** — containerized a Node.js HTTP server, built + ran the image, tested in browser → [`docker/`](docker/)
 - [ ] **AWS Fundamentals** — EC2, S3, VPC, IAM, RDS basics + AWS Certified Cloud Practitioner
-- [ ] **Terraform** — rebuild AWS fundamentals resources as IaC (providers, resources, state, plan/apply/destroy, variables)
+- [ ] **Terraform** — rebuild AWS fundamentals resources as IaC (providers, resources, state, plan/apply/destroy, variables) → theory: [`terraform/`](terraform/)
 - [ ] **CI/CD** — GitHub Actions pipeline for the Docker project (build → test → deploy)
 - [ ] **Kubernetes** — local cluster (kind/minikube), deploy the Docker app as Deployment + Service, then AWS EKS
-- [ ] **Linux fundamentals** — file system, permissions, process management, shell scripting
+- [ ] **Linux fundamentals** — file system, permissions, process management, shell scripting → theory: [`linux/00-linux-theory/`](linux/00-linux-theory/), [`shell-scripting/`](shell-scripting/)
 - [ ] **Git / version control** — branching, merging, PR workflow (beyond basic add/commit/push)
 - [ ] **Scripting (Python/Bash)** — folded into the topics above as automation, not a standalone module
 - [ ] **Monitoring/Observability** — CloudWatch alarms on AWS resources, Prometheus + Grafana on the Kubernetes deployment
@@ -27,6 +27,12 @@ Order is based on skill frequency across the job postings I've saved — AWS, Te
 ## Day-to-Day Log
 
 Short entries — what I did, what I learned, what's next. Newest first.
+
+### 2026-10-25 — Day 3: Linux, shell scripting and Terraform theory
+- Wrote the theory behind the commands in [`linux/00-linux-theory/`](linux/00-linux-theory/): OS and kernel, distros, directory layout, inodes and links, users and permissions, packages, systemd services, processes, ports, troubleshooting order.
+- Wrote [`shell-scripting/`](shell-scripting/): every building block (variables, special variables, exit status, conditions, functions, loops, redirections, error handling, idempotency) and a script template, plus 20 Q&A.
+- Wrote [`terraform/`](terraform/): IaC, core workflow, providers, resources and dependencies, variables, data sources, state and locking, lifecycle, count vs for_each, modules, plus 20 Q&A.
+- **Next:** hands-on proof for each: a small script project and a Terraform AWS build, then tick them off.
 
 ### 2026-09-23 — Day 2: Linux commands
 - Wrote the Linux commands I use in plain language, split by topic into [`linux/`](linux/): navigation, file CRUD, searching (grep/find), permissions, pipes & redirection, wget vs curl, and a few other useful commands.

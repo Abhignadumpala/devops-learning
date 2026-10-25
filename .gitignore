@@ -1,1 +1,6 @@
 job-search/
+
+# Terraform local state and provider downloads
+**/.terraform/
+*.tfstate
+*.tfstate.*

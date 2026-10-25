@@ -4,6 +4,7 @@ Linux commands written in simple language, as per my understanding. Each topic h
 
 | # | Topic | What's inside |
 |---|-------|---------------|
+| 0 | [Linux theory](00-linux-theory/) | what Linux is, directory layout, inodes, users, permissions, packages, services, processes, ports |
 | 1 | [Navigation](01-navigation/) | `pwd`, `ls`, `cd`, paths, important Linux folders |
 | 2 | [Files & folders (CRUD)](02-files-crud/) | create, read, update, copy/move/rename, delete |
 | 3 | [Searching](03-searching-grep-find/) | `find`, `grep` and its flags |
