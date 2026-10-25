@@ -9,7 +9,7 @@ Building toward job applications — the study order below follows the skills th
 ## Checklist
 
 - [x] **Docker** — containerized a Node.js HTTP server, built + ran the image, tested in browser → [`docker/`](docker/)
-- [ ] **AWS Fundamentals** — EC2, S3, VPC, IAM, RDS basics + AWS Certified Cloud Practitioner
+- [ ] **AWS Fundamentals** — EC2, S3, VPC, IAM, RDS basics + AWS Certified Cloud Practitioner → theory: [`aws/`](aws/)
 - [ ] **Terraform** — rebuild AWS fundamentals resources as IaC (providers, resources, state, plan/apply/destroy, variables) → theory: [`terraform/`](terraform/)
 - [ ] **CI/CD** — GitHub Actions pipeline for the Docker project (build → test → deploy)
 - [ ] **Kubernetes** — local cluster (kind/minikube), deploy the Docker app as Deployment + Service, then AWS EKS
@@ -32,6 +32,7 @@ Short entries — what I did, what I learned, what's next. Newest first.
 - Wrote the theory behind the commands in [`linux/00-linux-theory/`](linux/00-linux-theory/): OS and kernel, distros, directory layout, inodes and links, users and permissions, packages, systemd services, processes, ports, troubleshooting order.
 - Wrote [`shell-scripting/`](shell-scripting/): every building block (variables, special variables, exit status, conditions, functions, loops, redirections, error handling, idempotency) and a script template, plus 20 Q&A.
 - Wrote [`terraform/`](terraform/): IaC, core workflow, providers, resources and dependencies, variables, data sources, state and locking, lifecycle, count vs for_each, modules, plus 20 Q&A.
+- Wrote [`aws/`](aws/): 10 notes from IP addressing and VPC networking to IAM, EC2 + Packer + cost, storage, load balancers + Auto Scaling, Route 53, databases and WAF, plus 30 Q&A.
 - **Next:** hands-on proof for each: a small script project and a Terraform AWS build, then tick them off.
 
 ### 2026-09-23 — Day 2: Linux commands
