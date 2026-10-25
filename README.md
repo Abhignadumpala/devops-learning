@@ -1,7 +1,5 @@
 # DevOps Learning Log
 
-I already know the basics of most topics below from self-study, but I never documented any of it publicly — so I had no proof, and explaining it out loud in an interview always felt shakier than it should. This repo fixes both: I re-build each topic as a small hands-on project, document it properly, and write it up like I'd explain it to an interviewer. That process is what builds the confidence, not just the knowing.
-
 Building toward job applications — the study order below follows the skills that showed up most in DevOps job postings I've been tracking.
 
 **How this repo works:** each topic gets its own folder with a `README.md` (what I built + line-by-line explanation) and a `<topic>-interview-questions.md` (Q&A based on that exact project). This file tracks progress across all topics and logs what happened each day. A checkbox below means "documented here with proof," not "never touched before."
