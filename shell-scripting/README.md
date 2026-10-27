@@ -283,6 +283,54 @@ trap 'echo "Error at line $LINENO: $BASH_COMMAND"' ERR           # show where it
 
 > With `set -e`, put "check" commands inside the `if` (`if ! id roboshop; then ...`), otherwise their expected failure stops the script.
 
+**`set -euo pipefail`:**
+
+| Flag | Meaning |
+|------|---------|
+| `-e` | exit at the first failed command |
+| `-u` | error on an **unset** variable (typo like `$DIR` vs `$dir`) |
+| `-o pipefail` | a pipe fails if **any** command in it fails, not just the last |
+
+**`trap`** = a built-in command: "when X happens, run this".
+
+```bash
+trap 'echo "Something failed at line $LINENO"' ERR    # any command fails → bash runs this echo
+```
+
+| Name | Short for | Fires when | Use |
+|------|-----------|------------|-----|
+| `ERR` | error | a command fails (exit code not 0) | print the failed line: `$LINENO`, `$BASH_COMMAND` |
+| `EXIT` | exit | the script ends, for any reason | cleanup: `trap 'rm -f /tmp/lockfile' EXIT` |
+| `INT` | interrupt | I press **Ctrl+C** | clean up before stopping |
+| `TERM` | terminate | the script is killed (`kill <pid>`) | clean up before stopping |
+
+`ERR` follows the same rules as `set -e`: it does **not** fire for failures inside `if`, `&&` or `||`, because those failures are being handled on purpose.
+
+```
+Step 1
+cp: cannot stat '/no/such/file': No such file or directory
+FAILED at line 6: cp /no/such/file /tmp/      ← printed by the ERR trap
+```
+
+**Why learn `validate` first:** it teaches exit codes and `$?`, gives a clear SUCCESS / FAILED per step, and lets expected failures (`id roboshop`) pass. `set -e` alone hides all of that and has gaps (ignored inside `if`, `&&`, `||`).
+
+| | `validate` | `set -e` |
+|--|-----------|----------|
+| Messages | clear per step | needs `trap` |
+| Expected failures (`id user`) | easy | stops the script unless inside `if` |
+| Forgot to check a command | missed | caught automatically |
+
+**Production = both:** `set -euo pipefail` + `trap` at the top as the safety net, `validate` / log messages for clear steps, `if` around commands that are allowed to fail.
+
+**Exit code 0 is not enough:** some commands succeed but return **nothing** (e.g. `describe-instances` with an empty ID). Check values the script depends on: `[ -z "$instance_id" ] && { echo "No instance ID"; exit 1; }` or `${instance_id:?}`.
+
+**Quoting vs empty values:**
+
+| Problem | Example | Fix |
+|---------|---------|-----|
+| spaces in a value | `rm $FILE` with `FILE="my report.txt"` → deletes `my` and `report.txt` | `rm "$FILE"` |
+| empty value | `rm -rf "$DIR"/*` with `DIR=""` → `rm -rf /*` (quotes don't help) | `rm -rf "${DIR:?DIR is empty}"/*` |
+
 ---
 
 ## 13. Idempotency
@@ -357,6 +405,26 @@ echo "Completed in $SECONDS seconds"
 | still started by hand, no tests | **CI/CD** |
 | passwords inside scripts | secrets manager |
 | every `if` check written by hand | **Ansible / Terraform** (idempotent by design) |
+
+---
+
+## Quick revision
+
+What I learned in this class:
+
+- Scripts make manual server work **repeatable, fast and logged**.
+- **Shebang** `#!/bin/bash` on line 1; run with `bash script.sh`, not `sh`.
+- **Variables**: no spaces around `=`; `$( )` runs a command; double quotes expand, single don't.
+- **Special variables**: `$1` `$@` `$#` arguments, `$?` last exit status, `$0` script name, `$LINENO`, `$SECONDS`.
+- Everything is a **string**; `$(( ))` for maths.
+- **Exit status** `0` = success, anything else = failure. The script does **not** stop by itself.
+- **Conditions**: `-eq -ne -lt -gt` for numbers, `-z -n` for empty, `-f -d` for files; always quote `"$var"`.
+- **Functions** (`validate`) = write once, call after every step.
+- **Logs**: output to a log file, only SUCCESS / FAILED on screen.
+- **Error handling**: `validate $?` for clear steps + `set -euo pipefail` and `trap ... ERR` as a safety net. Also check important values aren't empty (`${var:?}`).
+- **Quoting** fixes spaces, not empty values: `rm -rf "${DIR:?}"/*`.
+- **Idempotent**: check before creating (`id user`, `mkdir -p`, count rows first).
+- **Limits**: no history/rollback (Git), no auto-runs (CI/CD), checks by hand (Ansible/Terraform).
 
 ---
 

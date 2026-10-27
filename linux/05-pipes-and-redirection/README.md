@@ -62,3 +62,18 @@ ls -l > filelist.txt                  -> save the ls output into a file
 ```
 
 Same as with `echo` in [Files & folders](../02-files-crud/).
+
+## Quick revision
+
+What I learned in this class:
+
+```
+|            -> pipe: output of one command becomes input of the next
+grep         -> filter lines: ps -ef | grep nginx, history | grep mkdir
+wc -l        -> count lines: ls | wc -l
+sort | uniq  -> sort first, then remove duplicates
+head / tail  -> first / last lines of any output
+>            -> save output to a file (overwrite)
+>>           -> add output to a file (append)
+df -h        -> disk space in G / M
+```

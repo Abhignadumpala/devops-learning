@@ -61,3 +61,12 @@ No change history or rollback (Git), no automatic runs or tests (CI/CD), and ide
 
 **20. `sh script.sh` vs `bash script.sh`?**
 On Ubuntu, `sh` is dash, a smaller shell: `echo -e` and some bash features behave differently. Use `bash`.
+
+**21. `validate` function or `set -euo pipefail`?**
+"I learned error handling with a `validate` function that checks `$?` after each step, which gives clear logs and lets me allow expected failures. In production I'd add `set -euo pipefail` as a safety net, so nothing slips through if I forget a check."
+
+**22. What is `trap`?**
+A built-in that runs a command when something happens: `trap '...' ERR` on any failure (print `$LINENO`), `trap '...' EXIT` when the script ends (cleanup).
+
+**23. Does quoting `"$DIR"` make `rm -rf "$DIR"/*` safe?**
+No. Quoting fixes spaces, not empty values: empty `DIR` still gives `rm -rf /*`. Use `"${DIR:?}"` so the script stops if it's empty.

@@ -341,4 +341,24 @@ Terraform reads **all** `.tf` files in the folder together; file names are only 
 
 ---
 
+## Quick revision
+
+What I learned in this class:
+
+- **IaC** = infrastructure as code: repeatable, reviewable, kept in Git.
+- **Terraform provisions** (creates VPC, EC2, S3); Ansible configures; Packer builds images.
+- **Declarative**: I write the end result; Terraform works out the steps and order.
+- **Workflow**: `init` → `fmt` → `validate` → `plan` → `apply` → `destroy`.
+- **Provider** = plugin for one platform's API; versions locked in `.terraform.lock.hcl` (commit it).
+- **References** (`aws_vpc.main.id`) create implicit dependencies; `depends_on` for explicit ones.
+- **Variables** (lowest → highest): default → `TF_VAR_` → `terraform.tfvars` → `*.auto.tfvars` → `-var`. **Outputs** print values; **locals** reuse values.
+- **Data source** reads something that exists (latest AMI); **resource** creates it.
+- **State** maps code to real resources: never edit by hand, never commit, keep remote in S3 with `use_lockfile = true`.
+- **Drift** = changed outside Terraform; `plan` shows it, `apply` fixes it.
+- **`-/+`** in the plan = replace (immutable); **`~`** = update in place.
+- **Lifecycle**: `create_before_destroy`, `prevent_destroy`, `ignore_changes`.
+- **`count`** for identical copies, **`for_each`** for named items. **Modules** = reusable folders.
+
+---
+
 Interview questions: [terraform-interview-questions.md](terraform-interview-questions.md)

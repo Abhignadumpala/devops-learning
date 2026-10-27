@@ -77,3 +77,17 @@ rm -r <folder-name>     -> delete folder with its contents
 rm -rf <folder-name>    -> force delete, no confirmation (be careful!)
 rmdir <folder-name>     -> delete only if folder is empty
 ```
+
+## Quick revision
+
+What I learned in this class:
+
+```
+CRUD          -> Create, Read, Update, Delete (files and folders)
+Create        -> touch file, mkdir folder, mkdir -p a/b/c
+Read          -> cat, cat -n, head / tail -n 5, tail -f (live logs), less, wc -l
+Update        -> echo > (overwrite), echo >> (append), vim (i, Esc, :wq)
+Copy / move   -> cp, cp -r for folders, mv (also renames)
+Delete        -> rm, rm -r folder, rmdir (only empty), rm -rf (careful!)
+Help          -> <command> --help, man <command>
+```
